@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Andhra Pradesh Traffic Guardian</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<h3> NANI RAKOTI PROJECT</h3>
+  <!-- Real-time clock -->
+  <div id="clock"></div>
+
+  <!-- Logos -->
+  <div style="text-align:center; margin-bottom:10px;">
+    <img src="./ap.png" alt="AP Govt Emblem" class="gov-logo" />
+    <img src="./police.png" alt="AP Police Logo" class="gov-logo" />
+  </div>
+
+  <h1>🚦 Andhra Pradesh Traffic Guardian</h1>
+  <div class="tagline">
+    Empowering Citizens to Report Violations –<br>
+    <strong>Transport Department, Andhra Pradesh State Police</strong><br>
+    <small>Official Initiative for Public Safety</small>
+  </div>
+
+  <div class="form">
+    <input type="text" id="vehicleNumber" placeholder="Enter Vehicle Number" />
+    
+    <select id="district">
+      <option value="">-- Select District --</option>
+      <option>Srikakulam</option>
+      <option>Vizianagaram</option>
+      <option>Visakhapatnam</option>
+      <option>East Godavari</option>
+      <option>West Godavari</option>
+      <option>Krishna</option>
+      <option>Guntur</option>
+      <option>Prakasam</option>
+      <option>Nellore</option>
+      <option>Kurnool</option>
+      <option>Anantapur</option>
+      <option>Chittoor</option>
+      <option>YSR Kadapa</option>
+    </select>
+
+    <select id="violationType">
+      <option value="">-- Select Violation --</option>
+      <option value="No Helmet">No Helmet (₹100)</option>
+      <option value="Triple Riding">Triple Riding (₹500)</option>
+      <option value="Mobile Usage">Mobile Usage (₹1000)</option>
+      <option value="Overspeed">Overspeed (₹400)</option>
+      <option value="Wrong Route">Wrong Route (₹300)</option>
+      <option value="Minor Riding">Minor Riding (₹2000)</option>
+    </select>
+
+    <label>📁 Upload Image</label>
+    <input type="file" id="photoUpload" accept="image/*" />
+
+    <label>📷 OR Capture Using Camera</label>
+    <video id="video" autoplay playsinline></video>
+    <button onclick="capturePhoto()">Capture Photo</button>
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <button onclick="submitViolation()">Submit Violation</button>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="searchBox" onkeyup="searchViolations()" placeholder="Search by Vehicle Number" />
+  </div>
+
+  <div class="violation-list" id="violationList"></div>
+
+  <script src="./java.jsx"></script>
+</body>
+</html>
